@@ -21,7 +21,6 @@ body, html {
 }
 
 .navbar {
-  background-color: #333;
   overflow: hidden;
 }
 
@@ -40,6 +39,8 @@ body, html {
 .navbar ul li a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .navbar ul li a:hover {

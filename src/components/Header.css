@@ -1,82 +1,162 @@
 /* General header styles */
 .header {
-    background-color: #4CAF50; /* Verde coherente */
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
+  background-color: #4CAF50; /* Verde coherente */
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+/* Navbar Desktop */
+.navbar {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-list li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s, transform 0.2s;
+  position: relative;
+}
+
+/* Subrayado animado */
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  bottom: -3px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-list li a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-list li a:hover {
+  color: #000000;
+  transform: scale(1.1);
+}
+.register-btn:hover {
+  color: #000000;
+  transform: scale(1.1);
+}
+.register-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  bottom: -3px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.register-btn:hover::after {
+  transform: scaleX(1);
+}
+
+/* Botón menú hamburguesa */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #4CAF50;
+    width: 100vw;
+    display: none;
+    flex-direction: column;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   }
-  
-  .header-container {
+
+  .navbar.open {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
   }
-  
-  .logo {
-    display: flex;
-    align-items: center;
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
   }
-  
-  .logo-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 0.5rem;
+
+  .nav-list li {
+    padding: 10px;
   }
-  
-  .navbar ul {
-    background-color: #4CAF50;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .navbar ul li {
-    
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar ul li a {
-    
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s, transform 0.2s;
-  }
-  
-  .navbar ul li a:hover {
-    background-color: #4CAF50;
-    color: #000000;
-    transform: scale(1.1);
-  }
-  
-  .icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .header-container {
-      flex-direction: column;
-    }
-  
-    .navbar ul {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-  }
-  
+}
+.register-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+

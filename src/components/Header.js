@@ -1,44 +1,81 @@
-import React from 'react';
-import './Header.css';
-
+import React, { useState } from "react";
+import {
+  FaHome,
+  FaInfoCircle,
+  FaConciergeBell,
+  FaCalendarCheck,
+  FaBars,
+  FaPhoneAlt,
+} from "react-icons/fa";
+import HotelFormModal from "./HotelFormModal";
+import "./Header.css";
+// npm install react-icons, npm install react-modal,
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
   return (
-    <header className="header">
-      <div className="header-container">
-        <div className="logo">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/167/167707.png"
-            alt="Hotel logo"
-            className="logo-icon"
-          />
-          <h1>Hotel Paradise</h1>
+    <>
+      <header id="top" className="header">
+        <div className="header-container">
+          <div className="logo">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/167/167707.png"
+              alt="Hotel logo"
+              className="logo-icon"
+            />
+            Hotel Paradise
+          </div>
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <FaBars />
+          </button>
+
+          <nav className={`navbar ${menuOpen ? "open" : ""}`}>
+            <ul className="nav-list">
+              <li>
+                <a href="#top">
+                  <FaHome /> Inicio
+                </a>
+              </li>
+
+              <li>
+                <a href="#services">
+                  <FaConciergeBell /> Servicios
+                </a>
+              </li>
+              <li>
+                <button
+                  className="register-btn"
+                  onClick={() => setModalIsOpen(true)}
+                >
+                  <FaCalendarCheck /> Registro
+                </button>
+              </li>
+              <li>
+                <a href="#info">
+                  <FaInfoCircle /> Información
+                </a>
+              </li>
+              <li>
+                <a href="#info">
+                  <FaPhoneAlt />
+                  +506 1234-5678
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav className="navbar">
-          <ul>
-            <li>
-              <a href="#reserve">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png"
-                  alt="Reservar icono"
-                  className="icon"
-                />
-                Reservar
-              </a>
-            </li>
-            <li>
-              <a href="#info">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
-                  alt="Información icono"
-                  className="icon"
-                />
-                Información
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+      </header>
+
+      {/* Modal separado */}
+      <HotelFormModal
+        isOpen={modalIsOpen}
+        onClose={() => setModalIsOpen(false)}
+      />
+    </>
   );
 }
 
