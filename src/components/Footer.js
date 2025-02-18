@@ -1,6 +1,6 @@
 import React from "react";
 import Rating from "./Rating";
-import "./Footer.css";
+import "../styles/Footer.css";
 
 const Footer = () => {
   return (

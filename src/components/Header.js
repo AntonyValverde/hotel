@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FaHome,
   FaInfoCircle,
@@ -8,8 +9,8 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import HotelFormModal from "./HotelFormModal";
-import "./Header.css";
-// npm install react-icons, npm install react-modal,
+import "../styles/Header.css";
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -36,22 +37,21 @@ function Header() {
           <nav className={`navbar ${menuOpen ? "open" : ""}`}>
             <ul className="nav-list">
               <li>
-                <a href="#top">
+                <Link to="/">
                   <FaHome /> Inicio
-                </a>
+                </Link>
               </li>
-
               <li>
-                <a href="#services">
+                <Link to="/servicios">
                   <FaConciergeBell /> Servicios
-                </a>
+                </Link>
               </li>
               <li>
                 <button
                   className="register-btn"
                   onClick={() => setModalIsOpen(true)}
                 >
-                  <FaCalendarCheck /> Registro
+                  <FaCalendarCheck /> Reservar
                 </button>
               </li>
               <li>
@@ -70,7 +70,6 @@ function Header() {
         </div>
       </header>
 
-      {/* Modal separado */}
       <HotelFormModal
         isOpen={modalIsOpen}
         onClose={() => setModalIsOpen(false)}

@@ -49,7 +49,6 @@ body, html {
 
 .main {
   flex: 1; /* Empuja el footer hacia abajo */
-  padding: 2rem;
 }
 
 .section {
@@ -60,6 +59,7 @@ body, html {
   width: 100%;
   max-width: 300px;
   height: auto;
+  padding: 2rem;
 }
 
 /* El footer se posiciona al final */

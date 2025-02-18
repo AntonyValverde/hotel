@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db, saveRating } from "../firebase"; // Asegúrate de que la ruta sea correcta
-import "./Rating.css";
+import "../styles/Rating.css";
 
 const Rating = () => {
   const [selectedRating, setSelectedRating] = useState(0); // Calificación seleccionada
@@ -49,7 +49,9 @@ const Rating = () => {
         // Actualiza el estado local
         setTotalRatings((prev) => prev + 1); // Incrementa el total
         setAverageRating((prev) =>
-          ((prev * totalRatings + selectedRating) / (totalRatings + 1)).toFixed(1)
+          ((prev * totalRatings + selectedRating) / (totalRatings + 1)).toFixed(
+            1
+          )
         ); // Calcula la nueva media
 
         setSubmitted(true); // Cambia el estado a enviado
@@ -69,7 +71,9 @@ const Rating = () => {
           <span
             key={star}
             className={`star ${
-              hoverRating >= star || selectedRating >= star || averageRating >= star
+              hoverRating >= star ||
+              selectedRating >= star ||
+              averageRating >= star
                 ? "selected"
                 : ""
             }`}
