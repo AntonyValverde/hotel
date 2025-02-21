@@ -7,25 +7,25 @@ function Main() {
       id: 1,
       title: "Habitaciones Confortables",
       content: "Disfruta de habitaciones espaciosas con vistas espectaculares.",
-      img: "./fotos/habitacion.jpg", // Reemplaza con la URL de la imagen
+      img: "./fotos/habitacion.jpg",  
     },
     {
       id: 2,
       title: "Piscina",
       content: "Relájate en nuestra piscina con servicio de bar.",
-      img: "./fotos/picsina.jpg", // Reemplaza con la URL de la imagen
+      img: "./fotos/picsina.jpg",  
     },
     {
       id: 3,
       title: "Restaurante Gourmet",
       content: "Descubre nuestra carta de cocina internacional.",
-      img: "./fotos/restaurante.jpg", // Reemplaza con la URL de la imagen
+      img: "./fotos/restaurante.jpg",  
     },
   ];
 
   return (
     <main className="main">
-      <img src="./fotos/hotel.jpg" alt="Hotel" className="imgHotel" />
+      
       {sections.map((section, index) => (
         <section
           key={section.id}
@@ -33,6 +33,7 @@ function Main() {
             index % 2 === 0 ? "image-right" : "image-left"
           }`}
         >
+          
           <img src={section.img} alt={section.title} className="section-img" />
           <div className="section-content">
             <h2>{section.title}</h2>
