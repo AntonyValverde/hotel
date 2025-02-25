@@ -25,7 +25,7 @@ function Main() {
 
   return (
     <main className="main">
-      
+      <img src="./fotos/hotel.jpg" alt="Hotel" className="imgHotel"/>
       {sections.map((section, index) => (
         <section
           key={section.id}

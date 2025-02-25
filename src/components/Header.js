@@ -70,7 +70,7 @@ function Header() {
         </div>
         
       </header>
-      <img src="./fotos/hotel.jpg" alt="Hotel" className="imgHotel"/>
+      
       <HotelFormModal
         isOpen={modalIsOpen}
         onClose={() => setModalIsOpen(false)}
