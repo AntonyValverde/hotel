@@ -4,7 +4,6 @@ import {
   FaHome,
   FaInfoCircle,
   FaConciergeBell,
-  FaCalendarCheck,
   FaBars,
   FaPhoneAlt,
 } from "react-icons/fa";
@@ -46,18 +45,11 @@ function Header() {
                   <FaConciergeBell /> Servicios
                 </Link>
               </li>
+
               <li>
-                <button
-                  className="register-btn"
-                  onClick={() => setModalIsOpen(true)}
-                >
-                  <FaCalendarCheck /> Reservar
-                </button>
-              </li>
-              <li>
-                <a href="#info">
+                <Link to="/information">
                   <FaInfoCircle /> Información
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#info">
@@ -68,9 +60,8 @@ function Header() {
             </ul>
           </nav>
         </div>
-        
       </header>
-      
+
       <HotelFormModal
         isOpen={modalIsOpen}
         onClose={() => setModalIsOpen(false)}
