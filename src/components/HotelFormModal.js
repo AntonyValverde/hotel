@@ -41,7 +41,7 @@ const HotelFormModal = ({ isOpen, onClose, selectedPlan }) => {
       // Guardar en Firebase Firestore
       await addDoc(collection(db, "hotel-registration"), data);
 
-      // Llamar a la API de Express (en lugar de Next.js)
+      // Llamar a la API de Express
       const response = await fetch("http://localhost:5000/api/sendEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -73,6 +73,9 @@ const HotelFormModal = ({ isOpen, onClose, selectedPlan }) => {
       className="modal"
       overlayClassName="overlay"
     >
+      <button className="close-btn" onClick={onClose} title="Cerrar">
+        X
+      </button>
       <div className="modal-content">
         <h2>{selectedPlan ? selectedPlan : "Registro de hotel"}</h2>
 
@@ -176,9 +179,6 @@ const HotelFormModal = ({ isOpen, onClose, selectedPlan }) => {
 
           <button type="submit" className="submit-btn-form">
             Enviar
-          </button>
-          <button className="close-btn" onClick={onClose}>
-            Cerrar
           </button>
         </form>
       </div>

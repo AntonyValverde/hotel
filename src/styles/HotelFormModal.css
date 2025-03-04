@@ -86,11 +86,12 @@
   }
   
   .close-btn {
-    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 380px;
     background: none;
     border: none;
     color: red;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     display: block;
     width: 100%;
